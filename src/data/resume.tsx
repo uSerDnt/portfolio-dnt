@@ -13,7 +13,16 @@ export const DATA = {
     "Front-end developer with 2 years of experience in web (ReactJS) and mobile (React Native) applications for clients across Education, E-commerce, Blockchain, and Social Networking. Skilled in creating accessible, user-friendly interfaces and committed to delivering excellent user experiences.",
   avatarUrl:
     "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/452206383_3489505904674587_5235226131960106067_n.jpg?stp=cp6_dst-jpg_s206x206&_nc_cat=109&ccb=1-7&_nc_sid=fe5ecc&_nc_ohc=bK544tYNGn8Q7kNvgE2A5_9&_nc_zt=23&_nc_ht=scontent.fsgn5-8.fna&_nc_gid=A6yTaEdh6XQ0epYedN4ySg7&oh=00_AYBBjop3CvYCqmfnUOcGjqQOrZxeHCwAcwpU8s_blN1DHw&oe=67387E7E",
-  skills: ["React.js", "React Native", "Next.js", "Typescript", "Node.js"],
+  skills: [
+    "React.js",
+    "React Native",
+    "Next.js",
+    "Typescript",
+    "TailwindCSS",
+    "Node.js",
+    "Git",
+    "Bitbucket",
+  ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     // { href: "/blog", icon: NotebookIcon, label: "Blog" },
@@ -83,6 +92,7 @@ export const DATA = {
       logoUrl: "/stu.jpg",
       start: "2019",
       end: "2023",
+      description: "Studying Software Engineering GPA:3/4",
     },
     {
       school: "English Center",

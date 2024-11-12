@@ -1,11 +1,15 @@
 import { Cover } from "@/components/aceternityui/cover";
 import { Contact } from "@/components/contact";
+import { DynamicIslandDemo } from "@/components/header-dynamic-island";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import SparklesText from "@/components/magicui/sparkles-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
+import { Skill } from "@/components/skill";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import ScrollProgressBar from "@/components/ui/scroll-progress-bar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -15,6 +19,10 @@ const BLUR_FADE_DELAY = 0.04;
 export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
+      {/* <section id="intro">
+        <DynamicIslandDemo />
+      </section> */}
+      <ScrollProgressBar showPercentage />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -121,13 +129,18 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="skill-icons">
+        <BlurFade delay={BLUR_FADE_DELAY * 11 - 0.05}>
+          <Skill />
+        </BlurFade>
+      </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  My Projects
+                  <SparklesText text="Projects" />
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Check out my latest work
@@ -162,9 +175,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       <section></section>
-
       <section id="contact">
         <Contact />
       </section>
