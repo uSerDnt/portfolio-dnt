@@ -238,7 +238,7 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Jirra-clone",
+      title: "Jira-clone",
       href: "https://planningdev.vercel.app/",
       dates: "Nov 2024 - Present",
       active: true,
