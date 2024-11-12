@@ -56,7 +56,7 @@ export const DATA = {
       href: "https://store.bitechco.com/",
       location: "43 Đường Số 37, Khu đô Thị Vạn Phúc, Thủ Đức, Hồ Chí Minh",
       title: "Frontend Developer",
-      logoUrl: "/bitech.png",
+      logoUrl: "/bitech.jpg",
       start: "Sep 2023",
       end: "Nov 2024",
       description:
@@ -68,7 +68,7 @@ export const DATA = {
       href: "https://nami.exchange/",
       location: "Remote",
       title: "Frontend Developer",
-      logoUrl: "/nami.png",
+      logoUrl: "/nami.jpg",
       start: "Oct 2022",
       end: "Feb 2023",
       description:
@@ -163,7 +163,7 @@ export const DATA = {
           icon: <Icons.chplay className="size-3" />,
         },
       ],
-      image: "/bikid.png",
+      image: "/bikid.jpg",
       video: "",
     },
     {
@@ -199,7 +199,7 @@ export const DATA = {
           icon: <Icons.chplay className="size-3" />,
         },
       ],
-      image: "/nami-web.png",
+      image: "/nami-web.jpg",
       video: "",
     },
     {
@@ -224,7 +224,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "/styleborrow.png",
+      image: "/styleborrow.jpg",
       video: "",
     },
     {
@@ -254,7 +254,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/jirra.png",
+      image: "/jirra.jpg",
       video: "",
     },
     {
@@ -280,7 +280,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/contri.png",
+      image: "/contri.jpg",
       video: "",
     },
   ],
