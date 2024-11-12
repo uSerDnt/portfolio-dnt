@@ -132,7 +132,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="skill-icons">
+      <section id="skill-icons" className='hidden md:flex'>
         <BlurFade delay={BLUR_FADE_DELAY * 11 - 0.05}>
           <Skill />
         </BlurFade>
