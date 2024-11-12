@@ -56,7 +56,7 @@ export const DATA = {
       href: "https://store.bitechco.com/",
       location: "43 Đường Số 37, Khu đô Thị Vạn Phúc, Thủ Đức, Hồ Chí Minh",
       title: "Frontend Developer",
-      logoUrl: "/bitech.jpg",
+      logoUrl: "/bitech.png",
       start: "Sep 2023",
       end: "Nov 2024",
       description:
@@ -68,7 +68,7 @@ export const DATA = {
       href: "https://nami.exchange/",
       location: "Remote",
       title: "Frontend Developer",
-      logoUrl: "/nami.jpg",
+      logoUrl: "/nami.png",
       start: "Oct 2022",
       end: "Feb 2023",
       description:
