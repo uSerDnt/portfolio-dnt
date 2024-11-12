@@ -12,7 +12,6 @@ export const useScrollToTop = () => {
   };
 
   const scrollToTop = () => {
-    console.log("hehehehe");
     window.scrollTo({
       top: 0,
       behavior: "smooth",

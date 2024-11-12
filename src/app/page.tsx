@@ -1,8 +1,10 @@
 import { Cover } from "@/components/aceternityui/cover";
+import { ButtonDownloadCV } from "@/components/button-download-cv";
 import { Contact } from "@/components/contact";
 import { DynamicIslandDemo } from "@/components/header-dynamic-island";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 import SparklesText from "@/components/magicui/sparkles-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
@@ -23,6 +25,7 @@ export default function Page() {
         <DynamicIslandDemo />
       </section> */}
       <ScrollProgressBar showPercentage />
+      <ButtonDownloadCV />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -173,9 +176,18 @@ export default function Page() {
               </BlurFade>
             ))}
           </div>
+          <div className="flex justify-center">
+            <Link href={"/"}>
+              <ShimmerButton className="shadow-2xl">
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                  View all projects
+                </span>
+              </ShimmerButton>
+            </Link>
+          </div>
         </div>
       </section>
-      <section></section>
+
       <section id="contact">
         <Contact />
       </section>
