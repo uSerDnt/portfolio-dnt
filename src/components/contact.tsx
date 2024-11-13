@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import BlurFade from "./magicui/blur-fade";
 import { TypewriterEffectSmooth } from "./aceternityui/typewriter-effect";

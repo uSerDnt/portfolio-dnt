@@ -102,6 +102,10 @@ const config = {
         marquee: {
           to: { transform: "translateX(-50%)" },
         },
+        "spinner-leaf-fade": {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -111,6 +115,7 @@ const config = {
           "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         marquee: "marquee var(--duration, 30s) linear infinite",
+        "spinner-leaf-fade": "spinner-leaf-fade 800ms linear infinite",
       },
     },
   },

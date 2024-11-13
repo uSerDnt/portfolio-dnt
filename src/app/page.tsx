@@ -181,15 +181,17 @@ export default function Page() {
               </BlurFade>
             ))}
           </div>
-          <div className="flex justify-center">
-            <Link href={"/"}>
-              <ShimmerButton className="shadow-2xl">
-                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                  View all projects
-                </span>
-              </ShimmerButton>
-            </Link>
-          </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <div className="flex justify-center">
+              <Link href={"/"}>
+                <ShimmerButton className="shadow-2xl">
+                  <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                    View all projects
+                  </span>
+                </ShimmerButton>
+              </Link>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
