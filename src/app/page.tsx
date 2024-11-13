@@ -1,4 +1,5 @@
 import { Cover } from "@/components/aceternityui/cover";
+import { AvatarCustomn } from "@/components/avatar-custom";
 import { ButtonDownloadCV } from "@/components/button-download-cv";
 import { Contact } from "@/components/contact";
 import { DynamicIslandDemo } from "@/components/header-dynamic-island";
@@ -32,7 +33,7 @@ export default function Page() {
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="text-2xl font-bold tracking-tighter sm:text-3xl xl:text-5xl/none"
                 yOffset={8}
                 text={`Hi, I'm `}
                 cover={
@@ -42,20 +43,25 @@ export default function Page() {
                 }
               />
               <BlurFadeText
-                className="max-w-[600px] md:text-xl"
+                className="max-w-[600px] md:text-lg sm:text-base"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 rounded-full">
-                <AvatarImage
-                  alt={DATA.name}
-                  src={DATA.avatarUrl}
-                  className="object-cover"
-                />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="flex sm:hidden">
+                <Avatar className="size-28 rounded-full">
+                  <AvatarImage
+                    alt={DATA.name}
+                    src={DATA.avatarUrl}
+                    className="object-cover"
+                  />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </div>
+              <div className="hidden md:flex">
+                <AvatarCustomn />
+              </div>
             </BlurFade>
           </div>
         </div>
@@ -132,17 +138,17 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="skill-icons" className='hidden md:flex'>
+      <section id="skill-icons" className="hidden md:flex">
         <BlurFade delay={BLUR_FADE_DELAY * 11 - 0.05}>
           <Skill />
         </BlurFade>
       </section>
       <section id="projects">
-        <div className="space-y-12 w-full py-12">
+        <div className="space-y-12 w-full py-6">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-0 text-sm">
                   <SparklesText text="Projects" />
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
