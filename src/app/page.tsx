@@ -2,7 +2,6 @@ import { Cover } from "@/components/aceternityui/cover";
 import { AvatarCustomn } from "@/components/avatar-custom";
 import { ButtonDownloadCV } from "@/components/button-download-cv";
 import { Contact } from "@/components/contact";
-import { DynamicIslandDemo } from "@/components/header-dynamic-island";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import ShimmerButton from "@/components/magicui/shimmer-button";
