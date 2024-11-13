@@ -49,7 +49,7 @@ export const LinkPreview = ({
       "viewport.width": width * 3,
       "viewport.height": height * 3,
     });
-    src = `https://api.microlink.io/?${params}`;
+    src = `https://portfolio-dnt.vercel.app?${params}`;
   } else {
     src = imageSrc;
   }

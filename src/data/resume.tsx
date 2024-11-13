@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Trong Doan Ngoc",
   initials: "DNT",
-  url: "https://dillion.io",
+  url: "https://portfolio-dnt.vercel.app",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description:
