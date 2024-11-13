@@ -99,6 +99,9 @@ const config = {
             transform: "translate(calc(100cqw - 100%), 0)",
           },
         },
+        marquee: {
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -107,6 +110,7 @@ const config = {
         "shimmer-slide":
           "shimmer-slide var(--speed) ease-in-out infinite alternate",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        marquee: "marquee var(--duration, 30s) linear infinite",
       },
     },
   },
