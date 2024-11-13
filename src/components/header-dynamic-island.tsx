@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowUpLeftSquareIcon,
@@ -25,17 +25,13 @@ import {
   useDynamicIslandSize,
   useScheduledAnimations,
 } from "@/components/cultui/dynamic-island";
+import { Play, Pause, Rewind, FastForward } from "lucide-react";
+import { IconBrandSpotify } from "@tabler/icons-react";
 
 const DynamicAction = () => {
   const { state: blobState, setSize } = useDynamicIslandSize();
 
-  const blobStates: SizePresets[] = [
-    "compact",
-    "large",
-    "tall",
-    "long",
-    "medium",
-  ];
+  const blobStates: SizePresets[] = ["compact", "large", "medium"];
 
   const cycleBlobStates = () => {
     const currentIndex = blobStates.indexOf(blobState.size);
@@ -46,9 +42,7 @@ const DynamicAction = () => {
   useScheduledAnimations([
     { size: "compact", delay: 1000 },
     { size: "large", delay: 1200 },
-    { size: "tall", delay: 1600 },
-    { size: "long", delay: 1800 },
-    { size: "medium", delay: 2200 },
+    { size: "medium", delay: 1400 },
   ]);
 
   // Provide dynamic detail in such a beautiful small place :)
@@ -60,7 +54,7 @@ const DynamicAction = () => {
         </DynamicDescription>
 
         <DynamicDescription className="absolute text-white right-4  my-auto text-lg font-bold tracking-tighter ">
-          newcult.co
+          welcome my portfolio
         </DynamicDescription>
       </div>
     </DynamicContainer>
@@ -79,59 +73,107 @@ const DynamicAction = () => {
     </DynamicContainer>
   );
 
-  // Great for user onboarding, forms, etc
-  const renderTallState = () => (
-    <DynamicContainer className="  flex flex-col mt-6 w-full items-start  gap-1 px-8 font-semibold">
-      <DynamicDescription className="bg-cyan-300 rounded-2xl tracking-tight leading-5  p-2">
-        The Cult of Pythagoras
-      </DynamicDescription>
-      <DynamicDescription className="bg-cyan-300 rounded-2xl tracking-tight leading-5  p-2 text-left">
-        Music of the Spheres, an idea that celestial bodies produce a form of
-        music through their movements
-      </DynamicDescription>
-
-      <DynamicTitle className=" text-4xl font-black tracking-tighter text-cyan-100 ">
-        any cool cults?
-      </DynamicTitle>
-    </DynamicContainer>
-  );
-
-  const renderLongState = () => (
-    <DynamicContainer className="flex items-center justify-center h-full w-full">
-      <DynamicDiv className="relative  flex w-full items-center justify-between gap-6 px-4">
-        <div>
-          <Waves className=" text-cyan-400 h-8 w-8" />
-        </div>
-
-        <DynamicTitle className="my-auto text-xl font-black tracking-tighter text-white ">
-          Supercalifragilisticexpialid
-        </DynamicTitle>
-      </DynamicDiv>
-    </DynamicContainer>
-  );
-
   const renderMediumState = () => (
-    <DynamicContainer className="flex flex-col justify-between px-2 pt-4 text-left text-white h-full">
-      <DynamicTitle className="text-2xl pl-3 font-black tracking-tighter">
-        Reincarnation, welcome back
-      </DynamicTitle>
-      <DynamicDescription className="leading-5 text-neutral-500 pl-3">
-        Good for small tasks or call outs
-      </DynamicDescription>
-
-      <DynamicDiv className="flex flex-col mt-auto space-y-1 mb-2 bg-neutral-700 p-2 rounded-b-2xl">
-        <Button>
-          <Mail className="mr-2 h-4 w-4 fill-cyan-400 text-neutral-900" /> Login
-          with email
-        </Button>
-
-        <Button className="mt-1 ">
-          <User className="mr-2 h-4 w-4 fill-cyan-400 text-cyan-400" /> Join the
-          cult now
-        </Button>
-      </DynamicDiv>
+    <DynamicContainer className="flex flex-col justify-between px-2 pt-4 text-white h-full bg-neutral-900 rounded-2xl">
+      <MusicPlayer />
     </DynamicContainer>
   );
+
+  function MusicPlayer() {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+      if (audioRef.current) {
+        audioRef.current.addEventListener("loadedmetadata", () => {
+          setDuration(audioRef.current.duration);
+        });
+        audioRef.current.addEventListener("timeupdate", () => {
+          setCurrentTime(audioRef.current.currentTime);
+        });
+      }
+    }, []);
+
+    const togglePlay = () => {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    };
+
+    const handleRewind = () => {
+      audioRef.current.currentTime -= 10;
+    };
+
+    const handleFastForward = () => {
+      audioRef.current.currentTime += 10;
+    };
+
+    const handleProgressChange = (e) => {
+      const newTime = e.target.value;
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    };
+
+    const formatTime = (time) => {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60);
+      return `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+    };
+
+    return (
+      <div className="p-4 w-full text-white">
+        <div className="flex items-center space-x-3 mb-4">
+          {/* <img
+            src="/nami.png"
+            alt="Song Cover"
+            className="w-12 h-12 rounded-md"
+          /> */}
+          <IconBrandSpotify className="size-12" />
+
+          <div>
+            <h3 className="text-lg font-semibold">Giua dai lo dong tay</h3>
+            <p className="text-sm text-gray-400">just for fun</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-between mb-2">
+          <span>{formatTime(currentTime)}</span>
+          <input
+            type="range"
+            min="0"
+            max={duration}
+            value={currentTime}
+            onChange={handleProgressChange}
+            className="w-full mx-2"
+          />
+          <span>{formatTime(duration)}</span>
+        </div>
+        <div className="flex items-center justify-center space-x-4">
+          <button onClick={handleRewind}>
+            <Rewind className="w-6 h-6 text-white" />
+          </button>
+          <button
+            onClick={togglePlay}
+            className="p-2 rounded-full bg-neutral-800"
+          >
+            {isPlaying ? (
+              <Pause className="w-6 h-6" />
+            ) : (
+              <Play className="w-6 h-6" />
+            )}
+          </button>
+          <button onClick={handleFastForward}>
+            <FastForward className="w-6 h-6 text-white" />
+          </button>
+        </div>
+        <audio ref={audioRef} src="/gd.mp3" />
+      </div>
+    );
+  }
 
   // Render function for other states
   const renderOtherStates = () => (
@@ -150,12 +192,8 @@ const DynamicAction = () => {
         return renderCompactState();
       case "large":
         return renderLargeState();
-      case "tall":
-        return renderTallState();
       case "medium":
         return renderMediumState();
-      case "long":
-        return renderLongState();
       // Optionally add cases for other states as necessary
       default:
         return renderOtherStates();
