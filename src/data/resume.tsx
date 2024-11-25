@@ -11,8 +11,7 @@ export const DATA = {
     "To apply my expertise in front-end development with a focus on ReactJS and React Native to drive innovation and growth in a dynamic organization. I aim to create responsive, scalable applications and collaborate effectively within cross-functional teams, continuously advancing my skills to deliver exceptional, user-centered products.",
   summary:
     "Front-end developer with 2 years of experience in web (ReactJS) and mobile (React Native) applications for clients across Education, E-commerce, Blockchain, and Social Networking. Skilled in creating accessible, user-friendly interfaces and committed to delivering excellent user experiences.",
-  avatarUrl:
-    "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/452206383_3489505904674587_5235226131960106067_n.jpg?stp=cp6_dst-jpg_s206x206&_nc_cat=109&ccb=1-7&_nc_sid=fe5ecc&_nc_ohc=bK544tYNGn8Q7kNvgE2A5_9&_nc_zt=23&_nc_ht=scontent.fsgn5-8.fna&_nc_gid=A6yTaEdh6XQ0epYedN4ySg7&oh=00_AYBBjop3CvYCqmfnUOcGjqQOrZxeHCwAcwpU8s_blN1DHw&oe=67387E7E",
+  avatarUrl: "/avatar.jpg",
   skills: [
     "React.js",
     "React Native",
